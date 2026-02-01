@@ -38,6 +38,8 @@ export function useSettings() {
   if (!settingsRef) {
     settingsRef = useLocalStorage<AppSettings>(STORAGE_KEY, DEFAULT_SETTINGS, {
       mergeDefaults: true,
+      initOnMounted: true,
+      writeDefaults: false,
     })
   }
 
